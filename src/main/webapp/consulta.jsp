@@ -25,6 +25,7 @@
                  <th>Id</th>
                  <th>Nome</th>
                  <th>Email</th>
+                 <th>Açoes</th>
              </tr>
          </thead>
          <tbody>
@@ -35,6 +36,7 @@
             	  out.print("<td>"+ contatos.getString("id") +"</td>");
             	  out.print("<td>"+ contatos.getString("nome") +"</td>");
             	  out.print("<td>"+ contatos.getString("email") +"</td>");
+            	  out.print("<td><a href='excluir.jsp?id="+ contatos.getString("id") +"'>Excluir</a></td>");
             	  out.print("<tr>");
               }
            %>
