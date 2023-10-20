@@ -1,4 +1,4 @@
-package controler;
+package controllers;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import modelos.Contato;
 import utils.Conexao;
 
-public class ContatoControler {
+public class ContatoController {
 	static Connection con = Conexao.getConexao();
    
 	public static ResultSet consultar() {
