@@ -36,7 +36,9 @@
             	  out.print("<td>"+ contatos.getString("id") +"</td>");
             	  out.print("<td>"+ contatos.getString("nome") +"</td>");
             	  out.print("<td>"+ contatos.getString("email") +"</td>");
-            	  out.print("<td><a href='excluir.jsp?id="+ contatos.getString("id") +"'>Excluir</a></td>");
+            	  String editar = "<td><a href='editar.jsp?id="+ contatos.getString("id") +"'>Editar</a>";
+            	  String excluir = "<td><a href='excluir.jsp?id="+ contatos.getString("id") +"'>Excluir</a>";
+            	  out.print(editar + " " + excluir);
             	  out.print("<tr>");
               }
            %>
