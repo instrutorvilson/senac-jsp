@@ -17,20 +17,41 @@
        <%@ include file="menu.jsp" %>
    </nav>
    <main class="container m-5">
-       <form action="gravar.jsp" method="POST">
+       <form action="gravar.jsp?editar=no" method="POST">
          <label class="form-label">Informe nome</label>
-         <input type="text" class="form-control mb-3" placeholder="Informe nome" name="nome">
+         <input id="nome" type="text" class="form-control mb-3" placeholder="Informe nome" name="nome">
          
          <label class="form-label">Informe email</label>
-         <input type="email" class="form-control mb-3" placeholder="Informe email" name="email">
+         <input id="email" type="email" class="form-control mb-3" placeholder="Informe email" name="email">
          
          <div class="m-3">
-              <button class="btn btn-outline-primary">Gravar</button>
+              <button class="btn btn-outline-primary" onclick="validar()">Gravar</button>
          </div>
       </form>
    </main>
    <footer >
        <%@ include file="footer.jsp" %>
    </footer>
+   <script>
+        function validar(){
+        	event.preventDefault();
+        	
+        	let inputNome = document.getElementById('nome')
+        	if(inputNome.value == ''){
+        		alert('Informe nome')
+        		inputNome.focus()
+        		return
+        	}
+        	
+        	let inputEmail = document.getElementById('email')
+        	if(inputEmail.value == ''){
+        		alert('Informe email')
+        		inputEmail.focus()
+        		return
+        	}
+        	
+        	document.getElementsByTagName('form')[0].submit()
+        }
+   </script>
 </body>
 </html>
